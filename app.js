@@ -27,8 +27,8 @@ app.get("/gradeQuiz", function(req,res){ // using express to grade the quiz
     
     //console.log(req.query.q1);
     let score = 0;
-    let f1, f2, f3, f4, f5;
-    f1 = f2 = f3 = f4 = f5 = "Wrong!";
+    let f1, f2, f3, f4, f5, f6,f7,f8;
+    f1 = f2 = f3 = f4 = f5 = f6 =f7 =f8 = "Wrong!";
     
     if (req.query.q1.toLowerCase() == "sacramento") {
         score += 20;
@@ -46,14 +46,28 @@ app.get("/gradeQuiz", function(req,res){ // using express to grade the quiz
        f3 = "you got it";
    }
   
-   if (req.query.q4d  =="checked"){
+   if (req.query.q4 == "Rhode Island"){
        
-     
-        score += 20; //increment score. 
-       f3 = "you got it";
-   }
+      // console.log(req.query.q4);
     
-    res.send( {"score": score, "feedback1":f1, "feedback2":f2, "feedback3":f3, "feedback4": f4}); // display feedback 
+        score += 20; //increment score. 
+       f4 = "you got it";
+     }
+    if(req.query.q5choice== "seal2"){
+      score += 20; //increment score. 
+       f5 = "you got it";
+    }
+    if(req.query.q6 == "50"){
+       score += 20; //increment score. 
+       f6 = "you got it";
+    }
+   if (req.query.q7 == "ca") {
+        score += 20;
+        f2 = "You got it!";
+    }
+    
+  
+    res.send( {"score": score, "feedback1":f1, "feedback2":f2, "feedback3":f3, "feedback4": f4, "feedback5": f5,"feedback6": f6,"feedback7": f7}); // display feedback 
     
     
 })
