@@ -82,6 +82,6 @@ app.get("/gradeQuiz", function(req,res){ // using express to grade the quiz
 // });
 
 //running server
-app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("Express server is running...");
-})
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Server is running ");
+});
