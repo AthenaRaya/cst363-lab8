@@ -27,7 +27,7 @@ app.get("/gradeQuiz", function(req,res){ // using express to grade the quiz
     
     //console.log(req.query.q1);
     let score = 0;
-    let f1, f2, f3, f4, f5, f6,f7,f8;
+    let f1, f2, f3, f4, f5, f6,f7, f8, message;
     f1 = f2 = f3 = f4 = f5 = f6 =f7 =f8 = "Wrong!";
     
     if (req.query.q1.toLowerCase() == "sacramento") {
@@ -61,18 +61,23 @@ app.get("/gradeQuiz", function(req,res){ // using express to grade the quiz
        score += 20; //increment score. 
        f6 = "you got it";
     }
-   if (req.query.q7 == "ca") {
+   if (req.query.q7 == "d") {
         score += 20;
-        f2 = "You got it!";
+        f7 = "You got it!";
     }
-    
+     if (req.query.q8c =="checked" , req.query.q8d !="checked" ,req.query.q8a != "checked" ,req.query.q8b != "checked"){
+     
+        score += 20; //increment score. 
+        f8 = "you got it";
+   }
   
-    res.send( {"score": score, "feedback1":f1, "feedback2":f2, "feedback3":f3, "feedback4": f4, "feedback5": f5,"feedback6": f6,"feedback7": f7}); // display feedback 
+  
+    res.send( {"score": score, "feedback1":f1, "feedback2":f2, "feedback3":f3, "feedback4": f4, "feedback5": f5,"feedback6": f6,"feedback7": f7, "feedback8": f8 }); // display feedback 
     
     
 })
 
-app.listen("8081","0.0.0.0",function(){
+app.listen("8080","0.0.0.0",function(){
   console.log("Express Server is running...");
 });
 

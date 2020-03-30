@@ -34,6 +34,7 @@
                        "q6":$("#q6").val(),
                        "q7":$("#q7").val(),
                        "q8":$("#q8").val(),
+                      
                     
                      
                     },
@@ -48,6 +49,16 @@
            $("#q6Feedback").html(result.feedback6);
            $("#q7Feedback").html(result.feedback7);
            $("#q8Feedback").html(result.feedback8);
+           
+             if (result.score > 80) {
+             $("#totalScore").css("background-color", "green");
+             $("#totalScore").html(`Congratulations! Total Score:${result.score}`);
+      
+        }else{
+          $("#totalScore").css("background-color", "red");
+          $("#totalScore").html(`Total Score:${result.score}`);
+           
+        }
           }
           
         
@@ -122,16 +133,28 @@
   <div id="q6Feedback"></div> 
   <br>
   
-    <h3><span id="markImg2"></span>Most populated state in the U.S?</h3>
-    <select id="q7" name="q7">
-        <option value="">Select One</option>
-        <option value="yk">NewYork</option>
-        <option value="ca">California</option>
-        <option value="tx">Texas</option>
-        <option value="fl">Flordia</option>
-    </select>
-    <br><br>
+
+  <h3><span id ="markIm2"></span>Which mountain summit is the largest in the USA?</h3>
+  <select id="q7">
+     <option value= "">Select One</option>
+     <option value= "d">Denali</option>
+     <option value= "mw">Mount Whitney</option>
+     <option value= "mr">Mount Rainer</option>
+     <option value= "mnw">Mount Washington</option>
+  </select>
+  <br><br>
   <div id="q7Feedback"></div>
+ <br>
+ 
+ 
+      <h3><span id ="markImg6"></span>Which is the largest populous state in the U.S.</h3>
+  
+  <input type="checkbox" id="q8a" > <label for="Newyork">Newyork</label>
+  <input type="checkbox" id="q8b"> <label for="Texas">Texas</label>
+  <input type="checkbox" id="q8c"> <label for="California">Californa</label>
+  <input type="checkbox" id="q8d"> <label for="Flordia">Flordia</label>
+  <br><br>
+  <div id="q8Feedback"></div>
   <br>
   
   
@@ -139,7 +162,7 @@
     <br><br>
 
   <h2 id="totalScore" class="text-info">Total Score:  </h2> <!--  place holder for Total score --> 
-  
+  <div id="messagefeedback"></div>
   <!-- <form> option 2 for this lab we are using Ajax--> 
    
 </body>
