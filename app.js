@@ -77,11 +77,11 @@ app.get("/gradeQuiz", function(req,res){ // using express to grade the quiz
     
 })
 
-app.listen("8080","0.0.0.0",function(){
-  console.log("Express Server is running...");
-});
+// app.listen("8080","0.0.0.0",function(){
+//   console.log("Express Server is running...");
+// });
 
 //running server
-//app.listen(process.env.PORT, process.env.IP, function(){
- //   console.log("Express server is running...");
-//})
+app.listen(process.env.PORT, process.env.IP, function(){
+    console.log("Express server is running...");
+})
